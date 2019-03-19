@@ -41,7 +41,7 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
 
         FancyToast.makeText(TwitterUsers.this, "Welcome" + ParseUser.getCurrentUser().getUsername(), Toast.LENGTH_LONG, FancyToast.INFO, true).show();
 
-        listView.findViewById(R.id.listview);
+        listView = findViewById(R.id.listview);
         tusers = new ArrayList<>();
         adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_checked, tusers);
         listView.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
@@ -128,7 +128,7 @@ public class TwitterUsers extends AppCompatActivity implements AdapterView.OnIte
             ParseUser.getCurrentUser().add("fanOf", tusers.get(position));
 
         } else {
-            FancyToast.makeText(TwitterUsers.this,tusers.get(position) + "is now followed",FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
+            FancyToast.makeText(TwitterUsers.this,tusers.get(position) + "is now unfollowed",FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
 
             ParseUser.getCurrentUser().getList("fanOf").remove(tusers.get(position));
             List currentUserFanOfList = (List) ParseUser.getCurrentUser().get("fanOf");

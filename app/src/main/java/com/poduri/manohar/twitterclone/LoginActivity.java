@@ -24,16 +24,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         setTitle("Log In");
 
-        edtLoginEmail.findViewById(R.id.edtLoginEmail);
-        edtLoginPassword.findViewById(R.id.edtLoginPassword);
-        btnLoginActivity.findViewById(R.id.btnLoginActivity);
-        btnSignUpLoginActivity.findViewById(R.id.btnSignUpLoginActivity);
+        edtLoginEmail = findViewById(R.id.edtLoginEmail);
+        edtLoginPassword = findViewById(R.id.edtLoginPassword);
+        btnLoginActivity = findViewById(R.id.btnLoginActivity);
+        btnSignUpLoginActivity = findViewById(R.id.btnSignUpLoginActivity);
 
         btnLoginActivity.setOnClickListener(this);
         btnSignUpLoginActivity.setOnClickListener(this);
 
 
-      if (ParseUser.getCurrentUser()!=null){
+      if (ParseUser.getCurrentUser() != null){
            ParseUser.getCurrentUser().logOut();
         }
     }
